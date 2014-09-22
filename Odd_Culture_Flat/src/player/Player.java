@@ -277,4 +277,26 @@ public class Player
 	{
 		this.medals = medals;
 	}
+	
+	/**
+	 * Adopt a Vereo and add to the vereos list
+	 *
+	 * @param vereo the Vereo to adopt
+	 * @return true if Vereo was successfully adopted
+	 */
+	public boolean adoptVereo(Vereo vereo)
+	{
+		return vereos.add(vereo);
+	}
+	
+	/**
+	 * Abandon a Vereo
+	 * 
+	 * @param vereo the Vereo to abandon
+	 * @return true if Vereo was successfully abandoned
+	 */
+	public boolean abandonVereo(Vereo vereo)
+	{
+		return vereos.remove(vereo);
+	}
 }
