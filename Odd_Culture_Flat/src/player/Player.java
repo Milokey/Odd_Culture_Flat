@@ -4,9 +4,11 @@ import inventory.Inventory;
 
 import java.util.List;
 
+import common_enumerations.Gender;
 import common_enumerations.Rank;
+import player.enumerations.Charm;
 import player.enumerations.EconomicClass;
-import player.enumerations.Gender;
+import player.enumerations.Skillz;
 import player.enumerations.Species;
 import vereo.Vereo;
 import common_enumerations.Medal;
@@ -23,6 +25,8 @@ public class Player
 	private Rank rank;
 	private EconomicClass ecClass;
 	private List<Medal> medals;
+	private Charm charm;
+	private Skillz skillz;
 	
 	public Player() {}
 	
@@ -278,6 +282,46 @@ public class Player
 		this.medals = medals;
 	}
 	
+	/**
+	 * Get the player's charm
+	 * 
+	 * @return charm the Charm to return
+	 */
+	public Charm getCharm() 
+	{
+		return this.charm;
+	}
+
+	/**
+	 * Set the player's charm
+	 * 
+	 * @param charm the Charm to set
+	 */
+	public void setCharm(Charm charm) 
+	{
+		this.charm = charm;
+	}
+
+	/**
+	 * Get the player's Skillz
+	 * 
+	 * @return skillz the player's Skillz
+	 */
+	public Skillz getSkillz() 
+	{
+		return this.skillz;
+	}
+
+	/**
+	 * Set the player's Skillz
+	 * 
+	 * @param skillz the Skillz to set
+	 */
+	public void setSkillz(Skillz skillz) 
+	{
+		this.skillz = skillz;
+	}
+
 	/**
 	 * Adopt a Vereo and add to the vereos list
 	 *

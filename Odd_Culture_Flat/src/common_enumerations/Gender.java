@@ -1,4 +1,4 @@
-package player.enumerations;
+package common_enumerations;
 
 public enum Gender 
 {
