@@ -2,6 +2,7 @@ package vereo;
 
 import vereo.enumerations.Ability;
 import vereo.enumerations.Hunger;
+import vereo.enumerations.MagicAbility;
 import vereo.enumerations.Species;
 import common_enumerations.Gender;
 
@@ -21,6 +22,7 @@ public class Vereo
 	private String color;
 	private StatPack stats;
 	private List<Ability> abilities;
+	private List<MagicAbility> magicAbilities;
 	private Gender gender;
 	private Hunger hunger;
 	

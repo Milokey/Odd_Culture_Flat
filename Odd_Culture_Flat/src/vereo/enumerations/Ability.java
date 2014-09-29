@@ -5,10 +5,10 @@ import java.util.EnumSet;
 import java.util.List;
 
 /**
- * This is the Ability superclass. Vereos can
- * share a basic set of Abilities, but each
- * species has a specific set of Abilities unique
- * to it. 
+ * This is the Ability enumeration. All
+ * Vereo's can have these abilities. A 
+ * small subclass can have other abilities
+ * as well.
  * 
  * @author tblount
  *
