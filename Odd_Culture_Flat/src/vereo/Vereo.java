@@ -306,4 +306,19 @@ public class Vereo
 	{
 		this.hunger = hunger;
 	}
+	
+	/**
+	 * TODO 
+	 * 
+	 * Behavioral methods.
+	 * 
+	 * Some of them may or may not be reflected in
+	 * Player.java. 
+	 */
+	
+	/*
+	 * public void eat(Item foodItem);
+	 * public void battle(Area area);
+	 */
 }
+

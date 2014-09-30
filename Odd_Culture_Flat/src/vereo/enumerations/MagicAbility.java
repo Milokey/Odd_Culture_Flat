@@ -19,7 +19,7 @@ package vereo.enumerations;
  * 			    defense by 5% for three turns.
  * Enervation -- decrease opponent's hp by an
  * 				 additional 50 points if player's
- * 				 monster's speed is higher.
+ * 				 Vereo's speed is higher.
  * Osiris -- restore a fainted Vereo. The current
  * 			 Vereo is KO'd. 25% chance of failure.
  * 			 Failure KO's the player's Vereo.
@@ -27,7 +27,7 @@ package vereo.enumerations;
  * 				  speed, and defense by 10% for the
  * 				  duration of the battle, but decrease
  * 				  player's hp by 500.
- * Shiva -- KO an opponent's Vereo and lower other Vereos' stats by 5%, 
+ * Shiva -- KO an opponent's Vereo and lower other Vereos' stats by 10%, 
  * 			but decrease player's hp by 750, strength by 15%, defense by 5%,
  * 			and speed by 3% for the duration of the battle.
  * 			Cannot use this ability if -750 hp would result

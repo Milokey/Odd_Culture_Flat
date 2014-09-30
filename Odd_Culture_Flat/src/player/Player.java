@@ -19,7 +19,7 @@ public class Player
 	private String age;
 	private String email;
 	private List<Vereo> vereos;
-	private List<Inventory> inventory;
+	private Inventory inventory; 
 	private Species species;
 	private Gender gender;
 	private Rank rank;
@@ -45,7 +45,7 @@ public class Player
 	 * @param medals the player's medals
 	 */
 	public Player(String name, String age, String email, List<Vereo> vereos,
-			List<Inventory> inventory, Species species, Gender gender,
+			Inventory inventory, Species species, Gender gender,
 			Rank rank, EconomicClass ecClass, List<Medal> medals) {
 		super();
 		this.name = name;
@@ -167,7 +167,7 @@ public class Player
 	 * 
 	 * @return inventory the player's inventory
 	 */
-	public List<Inventory> getInventory() 
+	public Inventory getInventory() 
 	{
 		return this.inventory;
 	}
@@ -177,7 +177,7 @@ public class Player
 	 * 
 	 * @param inventory the inventory to set
 	 */
-	public void setInventory(List<Inventory> inventory) 
+	public void setInventory(Inventory inventory) 
 	{
 		this.inventory = inventory;
 	}
@@ -343,4 +343,114 @@ public class Player
 	{
 		return vereos.remove(vereo);
 	}
+	
+	/**
+	 * Sell a Vereo
+	 * 
+	 * @param vereo the Vereo to sell
+	 * @param howMuch how much the Vereo sells for
+	 * @return true if Vereo was successfully sold
+	 */
+	public boolean sellVereo(Vereo vereo, Double howMuch)
+	{
+		return inventory.sellVereo(vereo, howMuch);
+	}
+	
+	/**
+	 * Buy a Vereo
+	 * 
+	 * @param vereo the Vereo to buy
+	 * @param howMuch how much the Vereo costs to buy
+	 * @return true if Vereo was successfully purchased
+	 */
+	public boolean buyVereo(Vereo vereo, Double howMuch)
+	{
+		return inventory.buyVereo(vereo, howMuch);
+	}
+	
+	/**
+	 * Add a medal
+	 * 
+	 * @param medal the Medal to add
+	 * @return true if the Medal was successfully added
+	 */
+	public boolean addMedal(Medal medal)
+	{
+		if (!medals.contains(medal))
+		{
+			return medals.add(medal);
+		}
+			
+		return false;
+	}
+	
+	/**
+	 * Return a particular medal, used in some
+	 * contests on the site
+	 * 
+	 * @param medalName the name of Medal to retrieve
+	 * @return the Medal if found, null if not
+	 */
+	public Medal getMedal(String medalName)
+	{
+		for (Medal medal : Medal.values())
+		{
+			if (medal.name().equals(medalName))
+			{
+				return medal;
+			}
+		}
+		
+		return null;
+	}
+	
+	/**
+	 * Increase the player's Rank if possible
+	 * 
+	 * @param rankName the name of the Rank to attain
+	 * @return true if Rank was attained
+	 */
+	public boolean rankUp(String rankName)
+	{
+		/*
+		 * Shouldn't happen, but make sure the
+		 * player can actually increase rank
+		 */
+		if (this.getRank().equals(Rank.TOPCOMMANDER))
+		{
+			return false;
+		}
+		
+		for (Rank theRank : Rank.values())
+		{
+			
+			if (theRank.name().equals(rankName))
+			{
+				this.rank = theRank;
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	/**
+	 * TODO
+	 * 
+	 * What follows are a list of behaviors that may
+	 * or may not change in the future.
+	 * 
+	 * 
+	 * Some of these will require other classes to 
+	 * be defined before they can even be stubbed
+	 * out.
+	 * 
+	 */
+	
+	/*
+	 * public void explore(Area area);
+	 * public void battle(Player player, Area area);
+	 * public PlayerScorePersisted checkScores();
+	 * public void feedVereo(Vereo vereo, Item foodItem); 
+	 */
 }
