@@ -5,6 +5,8 @@ import inventory.healthitems.Philter;
 
 import java.util.*;
 
+import common_enumerations.Medal;
+
 import vereo.Vereo;
 
 public class Inventory 
@@ -13,7 +15,7 @@ public class Inventory
 	private List<Philter> philters;
 	private List<BattleItem> battleItems;
 	private List<Vereo> vereos;
-	//private MedalCase medalCase;
+	private MedalCase medalCase;
 	
 	//+2 for medalCase and Vereos
 	private int totalInventory = philters.size() + battleItems.size() + 2;
@@ -106,6 +108,26 @@ public class Inventory
 	public void setVereos(List<Vereo> vereos) 
 	{
 		this.vereos = vereos;
+	}
+	
+	/**
+	 * Get the player's medal case
+	 * 
+	 * @return medalCase the medalCase
+	 */
+	public MedalCase getMedalCase()
+	{
+		return this.medalCase;
+	}
+	
+	/**
+	 * Set the player's medal case
+	 * 
+	 * @param medalCase the medalCase to set
+	 */
+	public void setMedalCase(MedalCase medalCase)
+	{
+		this.medalCase = medalCase;
 	}
 	
 	/**
@@ -218,6 +240,29 @@ public class Inventory
 		}
 		
 		return false;
+	}
+	
+	/**
+	 * Add a medal
+	 * 
+	 * @param medal the Medal to add
+	 * @return true if the Medal was successfully added
+	 */
+	public boolean addMedal(Medal medal)
+	{
+		return medalCase.addMedal(medal);
+	}
+	
+	/**
+	 * Return a particular medal, used in some
+	 * contests on the site
+	 * 
+	 * @param medalName the name of Medal to retrieve
+	 * @return the Medal if found, null if not
+	 */
+	public Medal getMedal(Medal medal)
+	{
+		return medalCase.getMedal(medal);
 	}
 	
 	/**

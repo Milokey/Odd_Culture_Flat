@@ -24,7 +24,6 @@ public class Player
 	private Gender gender;
 	private Rank rank;
 	private EconomicClass ecClass;
-	private List<Medal> medals;
 	private Charm charm;
 	private Skillz skillz;
 	
@@ -46,7 +45,7 @@ public class Player
 	 */
 	public Player(String name, String age, String email, List<Vereo> vereos,
 			Inventory inventory, Species species, Gender gender,
-			Rank rank, EconomicClass ecClass, List<Medal> medals) {
+			Rank rank, EconomicClass ecClass) {
 		super();
 		this.name = name;
 		this.age = age;
@@ -57,7 +56,6 @@ public class Player
 		this.gender = gender;
 		this.rank = rank;
 		this.ecClass = ecClass;
-		this.medals = medals;
 	}
 
 	/**
@@ -261,26 +259,6 @@ public class Player
 	{
 		this.ecClass = ecClass;
 	}
-
-	/**
-	 * Get the player's medals
-	 * 
-	 * @return medals the player's medals
-	 */
-	public List<Medal> getMedals() 
-	{
-		return this.medals;
-	}
-
-	/**
-	 * Set the player's medals
-	 *
-	 * @param medals the medals to set
-	 */
-	public void setMedals(List<Medal> medals) 
-	{
-		this.medals = medals;
-	}
 	
 	/**
 	 * Get the player's charm
@@ -369,42 +347,6 @@ public class Player
 	}
 	
 	/**
-	 * Add a medal
-	 * 
-	 * @param medal the Medal to add
-	 * @return true if the Medal was successfully added
-	 */
-	public boolean addMedal(Medal medal)
-	{
-		if (!medals.contains(medal))
-		{
-			return medals.add(medal);
-		}
-			
-		return false;
-	}
-	
-	/**
-	 * Return a particular medal, used in some
-	 * contests on the site
-	 * 
-	 * @param medalName the name of Medal to retrieve
-	 * @return the Medal if found, null if not
-	 */
-	public Medal getMedal(String medalName)
-	{
-		for (Medal medal : Medal.values())
-		{
-			if (medal.name().equals(medalName))
-			{
-				return medal;
-			}
-		}
-		
-		return null;
-	}
-	
-	/**
 	 * Increase the player's Rank if possible
 	 * 
 	 * @param rankName the name of the Rank to attain
@@ -448,7 +390,6 @@ public class Player
 	 */
 	
 	/*
-	 * public void explore(Area area);
 	 * public void battle(Player player, Area area);
 	 * public PlayerScorePersisted checkScores();
 	 * public void feedVereo(Vereo vereo, Item foodItem); 

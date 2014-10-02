@@ -15,7 +15,6 @@ import java.util.List;
  */
 public enum Ability 
 {
-		FLEE(0),
 		LOUDNOISE(1),
 		SLIDE(1),
 		LITTLEBLANK(5),

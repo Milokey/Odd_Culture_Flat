@@ -5,6 +5,10 @@ package vereo.enumerations;
  * are allowed to have. The following
  * MagicAbilities have special effects:
  * 
+ * Flee -- 50% chance of fleeing a battle.
+ * 		   The Player who flees is considered
+ * 		   to have lost. Fleeing during 
+ * 		   tournaments is not permitted.
  * Sync -- sets this Vereo's stats to the
  * 		   opponent's for the duration of
  * 		   battle or for three turns, whichever
@@ -39,6 +43,7 @@ package vereo.enumerations;
  */
 public enum MagicAbility 
 {
+	FLEE(0),
 	FIRE(5),
 	ICE(5),
 	AIR(5),

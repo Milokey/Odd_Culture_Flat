@@ -5,6 +5,7 @@ import vereo.enumerations.Hunger;
 import vereo.enumerations.MagicAbility;
 import vereo.enumerations.Species;
 import common_enumerations.Gender;
+import inventory.fooditems.BasicFoodItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +49,6 @@ public class Vereo
 		
 		this.abilityPoints = 0;
 		abilities = new ArrayList<Ability>();
-		abilities.add(Ability.FLEE);
 		abilities.add(Ability.LOUDNOISE);
 		abilities.add(Ability.SLIDE);
 		
@@ -308,6 +308,16 @@ public class Vereo
 	}
 	
 	/**
+	 * Update the Vereo's hunger level
+	 * 
+	 * @param item the BasicFoodItem to eat
+	 */
+	public void eat(BasicFoodItem item)
+	{
+		//TODO logic! :D
+	}
+	
+	/**
 	 * TODO 
 	 * 
 	 * Behavioral methods.
@@ -317,7 +327,6 @@ public class Vereo
 	 */
 	
 	/*
-	 * public void eat(Item foodItem);
 	 * public void battle(Area area);
 	 */
 }
